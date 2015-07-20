@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Mars Rovers</h1>
+</div>
+
+<div>
+   @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+   {
+    <div>
+        @Html.Label("Please insert here the input data")
+    </div>
+    <div>
+        @Html.TextArea("Command", "", 8, 30, null)
+    </div>
+    <div>
+        <input type="submit" value="Submit" class="btn btn-default" />
+    </div>
+   }
+
+   @if (ViewBag.Result != null)
+   {
+        <h2>Result:</h2>
+        <textarea rows="5" cols="30">@ViewBag.Result</textarea>
+   }
+</div>
